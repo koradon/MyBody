@@ -1,6 +1,5 @@
 package application.view.charts;
 
-import application.model.Body;
 import application.model.BodyHistory;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -15,21 +14,19 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.ListIterator;
+
 
 /**
  * Created by Michał on 17.03.2016.
  */
 public class LineChart extends JFrame {
 
-    private BodyHistory bodyHistory = new BodyHistory();
-    private ArrayList<Body> bodyHistoryList = bodyHistory.getBodyHistory();
+    private BodyHistory bodyHistory;
 
-    public LineChart(final String title){
+    public LineChart(final String title, BodyHistory bodyHistory){
         super(title);
 
+        this.bodyHistory = bodyHistory;
         final XYDataset dataset = createDataset();
         final JFreeChart chart = createChart(dataset);
         final ChartPanel chartPanel = new ChartPanel(chart);
@@ -38,15 +35,15 @@ public class LineChart extends JFrame {
         setContentPane(chartPanel);
     }
 
+
     private XYDataset createDataset() {
 
         final XYSeries weight = new XYSeries("Weight");
         final XYSeries height = new XYSeries("height");
 
-        for(int i=0; i<= bodyHistoryList.size(); i++){
-            weight.add(i, bodyHistoryList.get(i).getWeight());
-            height.add(i, bodyHistoryList.get(i).getHight());
-
+        for(int i=0; i<= bodyHistory.getBodyHistory().size()-1; i++){
+            weight.add(i, bodyHistory.getBodyHistory().get(i).getWeight());
+            height.add(i, bodyHistory.getBodyHistory().get(i).getHight());
         }
 
         final XYSeriesCollection dataset = new XYSeriesCollection();
@@ -60,9 +57,9 @@ public class LineChart extends JFrame {
 
         // create the chart...
         final JFreeChart chart = ChartFactory.createXYLineChart(
-                "Line Chart Demo 6",      // chart title
-                "X",                      // x axis label
-                "Y",                      // y axis label
+                "Body Dimension History",      // chart title
+                "Measurments",                      // x axis label
+                "values",                      // y axis label
                 dataset,                  // data
                 PlotOrientation.VERTICAL,
                 true,                     // include legend
@@ -78,14 +75,15 @@ public class LineChart extends JFrame {
 
         // get a reference to the plot for further customisation...
         final XYPlot plot = chart.getXYPlot();
-        plot.setBackgroundPaint(Color.lightGray);
+        plot.setBackgroundPaint(Color.white);
         //    plot.setAxisOffset(new Spacer(Spacer.ABSOLUTE, 5.0, 5.0, 5.0, 5.0));
-        plot.setDomainGridlinePaint(Color.white);
-        plot.setRangeGridlinePaint(Color.white);
+        plot.setDomainGridlinePaint(Color.blue);
+        plot.setRangeGridlinePaint(Color.blue);
 
         final XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
         renderer.setSeriesLinesVisible(0, false);
         renderer.setSeriesShapesVisible(1, false);
+
         plot.setRenderer(renderer);
 
         // change the auto tick unit selection to integer units only...

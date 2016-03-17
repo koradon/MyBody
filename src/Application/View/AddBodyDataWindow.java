@@ -7,7 +7,9 @@ import java.awt.event.ActionListener;
 
 import application.controler.FormController;
 import application.model.Body;
+import application.model.BodyHistory;
 import application.view.charts.LineChart;
+import org.jfree.ui.RefineryUtilities;
 
 
 /**
@@ -18,9 +20,6 @@ public class AddBodyDataWindow extends JFrame {
     Dimension screenSize = kit.getScreenSize();
     private int DEFAULT_WIDTH = screenSize.width;
     private int DEFAULT_HEIGHT = screenSize.height;
-
-    private int TEXTAREA_ROWS = 1;
-    private int TEXTAREA_COLUMNS = 6;
 
     @Override
     public void setSize(int width, int height) {
@@ -44,6 +43,7 @@ public class AddBodyDataWindow extends JFrame {
         JPanel northPanel = new JPanel();
         JPanel southPanel = new JPanel();
         final JPanel eastPanel = new JPanel();
+
 
         centerPanel.setLayout(new GridLayout(10, 2));
         centerPanel.add(new JLabel("Weight: ", SwingConstants.RIGHT));
@@ -71,22 +71,27 @@ public class AddBodyDataWindow extends JFrame {
 
         northPanel.add(new JLabel("Please fill your dimensions", SwingConstants.CENTER));
 
+
+        eastPanel.setVisible(false);
+
+
+
+
         JButton saveButton = new JButton("Save");
         southPanel.add(saveButton);
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                FormController form = new FormController();
-                if(form.saveBodyData(new Body(Double.parseDouble(weightTF.getText()),
-                        Double.parseDouble(heightTF.getText()),
-                        Double.parseDouble(neckTF.getText()),
-                        Double.parseDouble(chestTF.getText()),
-                        Double.parseDouble(bicepsTF.getText()),
-                        Double.parseDouble(waistTF.getText()),
-                        Double.parseDouble(abdomenTF.getText()),
-                        Double.parseDouble(hipsTF.getText()),
-                        Double.parseDouble(thighTF.getText()),
-                        Double.parseDouble(calfTF.getText())))){
+                if(FormController.saveBodyData(new Body(Double.parseDouble(weightTF.getText()),
+                                              Double.parseDouble(heightTF.getText()),
+                                              Double.parseDouble(neckTF.getText()),
+                                              Double.parseDouble(chestTF.getText()),
+                                              Double.parseDouble(bicepsTF.getText()),
+                                              Double.parseDouble(waistTF.getText()),
+                                              Double.parseDouble(abdomenTF.getText()),
+                                              Double.parseDouble(hipsTF.getText()),
+                                              Double.parseDouble(thighTF.getText()),
+                                              Double.parseDouble(calfTF.getText())))){
                     System.out.println("Saved");
                 }
 
@@ -98,8 +103,12 @@ public class AddBodyDataWindow extends JFrame {
         showPlotButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                LineChart chart = new LineChart("Body parameters");
-                eastPanel.add(chart);
+                LineChart chart = new LineChart("Body Dimension History",
+                                                FormController.getBodyHistory());
+                chart.pack();
+                RefineryUtilities.centerFrameOnScreen(chart);
+                chart.setVisible(true);
+                //eastPanel.setVisible(true);
             }
         });
 
