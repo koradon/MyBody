@@ -1,6 +1,4 @@
-package Application.Model;
-
-import Application.Model.Body;
+package application.model;
 
 import java.util.ArrayList;
 

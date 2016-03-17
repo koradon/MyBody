@@ -1,6 +1,4 @@
-package Application.View;
-
-import sun.security.util.Password;
+package application.view;
 
 import javax.swing.*;
 import java.awt.*;
@@ -45,8 +43,8 @@ public class LoggingWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if(logIn(username.getText())){
                     dispose();
-                };
 
+                };
 
             }
         });

@@ -1,13 +1,13 @@
-package Application.View;
+package application.view;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import Application.Controler.FormController;
-import Application.Model.Body;
-import Application.Model.BodyHistory;
+import application.controler.FormController;
+import application.model.Body;
+import application.view.charts.LineChart;
 
 
 /**
@@ -43,6 +43,7 @@ public class AddBodyDataWindow extends JFrame {
         JPanel centerPanel = new JPanel();
         JPanel northPanel = new JPanel();
         JPanel southPanel = new JPanel();
+        final JPanel eastPanel = new JPanel();
 
         centerPanel.setLayout(new GridLayout(10, 2));
         centerPanel.add(new JLabel("Weight: ", SwingConstants.RIGHT));
@@ -77,7 +78,7 @@ public class AddBodyDataWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 FormController form = new FormController();
                 if(form.saveBodyData(new Body(Double.parseDouble(weightTF.getText()),
-                        Double.parseDouble(hipsTF.getText()),
+                        Double.parseDouble(heightTF.getText()),
                         Double.parseDouble(neckTF.getText()),
                         Double.parseDouble(chestTF.getText()),
                         Double.parseDouble(bicepsTF.getText()),
@@ -89,6 +90,16 @@ public class AddBodyDataWindow extends JFrame {
                     System.out.println("Saved");
                 }
 
+            }
+        });
+
+        JButton showPlotButton = new JButton("Show Plot");
+        southPanel.add(showPlotButton);
+        showPlotButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                LineChart chart = new LineChart("Body parameters");
+                eastPanel.add(chart);
             }
         });
 

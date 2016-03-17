@@ -1,4 +1,4 @@
-package Application.View;
+package application.view;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +13,7 @@ public class MainWindowTest {
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
+
                 final AddBodyDataWindow addBodyDataWindow = new AddBodyDataWindow();
                 addBodyDataWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 addBodyDataWindow.setTitle("MyBody! - Log your body");
@@ -26,7 +27,6 @@ public class MainWindowTest {
                     @Override
                     public void windowDeactivated(final WindowEvent e) {
                         super.windowDeactivated(e);
-                        //test if login successful
                         addBodyDataWindow.setVisible(true);
 
                     }
