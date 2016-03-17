@@ -1,3 +1,5 @@
+package Application.Model;
+
 /**
  * Created by Michał on 17.03.2016.
  */

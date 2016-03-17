@@ -1,5 +1,6 @@
+package Application;
+
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * Created by Michał on 17.03.2016.

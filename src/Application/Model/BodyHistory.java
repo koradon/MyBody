@@ -1,3 +1,7 @@
+package Application.Model;
+
+import Application.Model.Body;
+
 import java.util.ArrayList;
 
 /**

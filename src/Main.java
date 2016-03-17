@@ -1,3 +1,6 @@
+import Application.Model.Body;
+import Application.Model.BodyHistory;
+
 /**
  * Created by Michał on 17.03.2016.
  */
