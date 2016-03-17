@@ -6,4 +6,5 @@ import java.awt.*;
  */
 public class MainWindowComponent extends JComponent {
     private int n =0;
+    private int b;
 }
