@@ -31,7 +31,7 @@ public class LineChart extends JFrame {
         final JFreeChart chart = createChart(dataset);
         final ChartPanel chartPanel = new ChartPanel(chart);
 
-        chartPanel.setPreferredSize(new java.awt.Dimension(500, 270));
+        chartPanel.setPreferredSize(new java.awt.Dimension(1000, 800));
         setContentPane(chartPanel);
     }
 
@@ -39,16 +39,40 @@ public class LineChart extends JFrame {
     private XYDataset createDataset() {
 
         final XYSeries weight = new XYSeries("Weight");
-        final XYSeries height = new XYSeries("height");
+        final XYSeries height = new XYSeries("Height");
+        final XYSeries neck = new XYSeries("Neck");
+        final XYSeries chest = new XYSeries("Chest");
+        final XYSeries biceps = new XYSeries("biceps");
+        final XYSeries waist = new XYSeries("waist");
+        final XYSeries abdomen = new XYSeries("Abdomen");
+        final XYSeries hips = new XYSeries("Hips");
+        final XYSeries thigh = new XYSeries("Thigh");
+        final XYSeries calf = new XYSeries("Calf");
 
-        for(int i=0; i<= bodyHistory.getBodyHistory().size()-1; i++){
+        for(int i=0; i< bodyHistory.getBodyHistory().size(); i++){
             weight.add(i, bodyHistory.getBodyHistory().get(i).getWeight());
             height.add(i, bodyHistory.getBodyHistory().get(i).getHight());
+            neck.add(i, bodyHistory.getBodyHistory().get(i).getNeckCircuit());
+            chest.add(i, bodyHistory.getBodyHistory().get(i).getChestCircuit());
+            biceps.add(i, bodyHistory.getBodyHistory().get(i).getBicepsCircuit());
+            waist.add(i, bodyHistory.getBodyHistory().get(i).getWaistCircuit());
+            abdomen.add(i, bodyHistory.getBodyHistory().get(i).getAbdomenCircuit());
+            hips.add(i, bodyHistory.getBodyHistory().get(i).getHipsCircuit());
+            thigh.add(i, bodyHistory.getBodyHistory().get(i).getThighCircuit());
+            calf.add(i, bodyHistory.getBodyHistory().get(i).getCalfCircuit());
         }
 
         final XYSeriesCollection dataset = new XYSeriesCollection();
         dataset.addSeries(weight);
         dataset.addSeries(height);
+        dataset.addSeries(neck);
+        dataset.addSeries(chest);
+        dataset.addSeries(biceps);
+        dataset.addSeries(waist);
+        dataset.addSeries(abdomen);
+        dataset.addSeries(hips);
+        dataset.addSeries(thigh);
+        dataset.addSeries(calf);
 
         return dataset;
     }
@@ -75,13 +99,14 @@ public class LineChart extends JFrame {
 
         // get a reference to the plot for further customisation...
         final XYPlot plot = chart.getXYPlot();
-        plot.setBackgroundPaint(Color.white);
+        plot.setBackgroundPaint(Color.lightGray);
         //    plot.setAxisOffset(new Spacer(Spacer.ABSOLUTE, 5.0, 5.0, 5.0, 5.0));
         plot.setDomainGridlinePaint(Color.blue);
         plot.setRangeGridlinePaint(Color.blue);
+        plot.setBackgroundAlpha(0.5f);
 
         final XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
-        renderer.setSeriesLinesVisible(0, false);
+        renderer.setSeriesLinesVisible(1, false);
         renderer.setSeriesShapesVisible(1, false);
 
         plot.setRenderer(renderer);

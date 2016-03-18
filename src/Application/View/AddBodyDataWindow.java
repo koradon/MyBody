@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 
 import application.controler.FormController;
 import application.model.Body;
-import application.model.BodyHistory;
 import application.view.charts.LineChart;
 import org.jfree.ui.RefineryUtilities;
 
@@ -108,7 +107,6 @@ public class AddBodyDataWindow extends JFrame {
                 chart.pack();
                 RefineryUtilities.centerFrameOnScreen(chart);
                 chart.setVisible(true);
-                //eastPanel.setVisible(true);
             }
         });
 

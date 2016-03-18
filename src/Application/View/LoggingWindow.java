@@ -10,8 +10,8 @@ import java.awt.event.ActionListener;
  * Created by Michał on 17.03.2016.
  */
 public class LoggingWindow extends JFrame {
-    Toolkit kit = Toolkit.getDefaultToolkit();
-    Dimension screenSize = kit.getScreenSize();
+    private Toolkit kit = Toolkit.getDefaultToolkit();
+    private Dimension screenSize = kit.getScreenSize();
     private int DEFAULT_WIDTH = screenSize.width;
     private int DEFAULT_HEIGHT = screenSize.height;
 
@@ -43,7 +43,6 @@ public class LoggingWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if(logIn(username.getText())){
                     dispose();
-
                 };
 
             }
