@@ -91,16 +91,12 @@ public class LineChart extends JFrame {
                 false                     // urls
         );
 
-        // NOW DO SOME OPTIONAL CUSTOMISATION OF THE CHART...
         chart.setBackgroundPaint(Color.white);
 
-//        final StandardLegend legend = (StandardLegend) chart.getLegend();
-        //      legend.setDisplaySeriesShapes(true);
 
         // get a reference to the plot for further customisation...
         final XYPlot plot = chart.getXYPlot();
         plot.setBackgroundPaint(Color.lightGray);
-        //    plot.setAxisOffset(new Spacer(Spacer.ABSOLUTE, 5.0, 5.0, 5.0, 5.0));
         plot.setDomainGridlinePaint(Color.blue);
         plot.setRangeGridlinePaint(Color.blue);
         plot.setBackgroundAlpha(0.5f);
@@ -114,7 +110,6 @@ public class LineChart extends JFrame {
         // change the auto tick unit selection to integer units only...
         final NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
         rangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
-        // OPTIONAL CUSTOMISATION COMPLETED.
 
         return chart;
 
