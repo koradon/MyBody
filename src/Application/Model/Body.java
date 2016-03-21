@@ -1,3 +1,5 @@
+package application.model;
+
 /**
  * Created by Michał on 17.03.2016.
  */

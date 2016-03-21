@@ -1,3 +1,6 @@
+import application.model.Body;
+import application.model.BodyHistory;
+
 /**
  * Created by Michał on 17.03.2016.
  */
