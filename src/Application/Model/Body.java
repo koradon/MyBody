@@ -1,9 +1,13 @@
 package application.model;
 
+import java.util.Date;
+
 /**
  * Created by Michał on 17.03.2016.
  */
 public class Body {
+    private int idMeasurment;
+    private Date date;
     private double weight;
     private double hight;
     private double neckCircuit;
@@ -25,6 +29,8 @@ public class Body {
                 double hipsCircuit,
                 double thighCircuit,
                 double calfCircuit) {
+
+        this.date = new Date();
         this.weight = weight;
         this.hight = hight;
         this.neckCircuit = neckCircuit;
