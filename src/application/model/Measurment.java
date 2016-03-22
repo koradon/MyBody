@@ -5,12 +5,12 @@ package application.model;
  */
 public class Measurment {
     private int idUser;
-    private int idMeasurment;
+    private int idBody;
 
     public Measurment(int idUser,
-                      int idMeasurment) {
+                      int idBody) {
         this.idUser = idUser;
-        this.idMeasurment = idMeasurment;
+        this.idBody = idBody;
     }
 
     public int getIdUser() {
@@ -21,11 +21,11 @@ public class Measurment {
         this.idUser = idUser;
     }
 
-    public int getIdMeasurment() {
-        return idMeasurment;
+    public int getIdBody() {
+        return idBody;
     }
 
-    public void setIdMeasurment(int idMeasurment) {
-        this.idMeasurment = idMeasurment;
+    public void setIdBody(int idBody) {
+        this.idBody = idBody;
     }
 }

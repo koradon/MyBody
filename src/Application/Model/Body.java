@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public class Body {
     private int idMeasurment;
-    private Date date;
+    private String date;
     private double weight;
     private double hight;
     private double neckCircuit;
@@ -19,6 +19,32 @@ public class Body {
     private double thighCircuit;
     private double calfCircuit;
 
+    public Body(int idMeasurment,
+                String date,
+                double weight,
+                double hight,
+                double neckCircuit,
+                double chestCircuit,
+                double bicepsCircuit,
+                double waistCircuit,
+                double abdomenCircuit,
+                double hipsCircuit,
+                double thighCircuit,
+                double calfCircuit) {
+        this.idMeasurment = idMeasurment;
+        this.date = date;
+        this.weight = weight;
+        this.hight = hight;
+        this.neckCircuit = neckCircuit;
+        this.chestCircuit = chestCircuit;
+        this.bicepsCircuit = bicepsCircuit;
+        this.waistCircuit = waistCircuit;
+        this.abdomenCircuit = abdomenCircuit;
+        this.hipsCircuit = hipsCircuit;
+        this.thighCircuit = thighCircuit;
+        this.calfCircuit = calfCircuit;
+    }
+
     public Body(double weight,
                 double hight,
                 double neckCircuit,
@@ -29,8 +55,8 @@ public class Body {
                 double hipsCircuit,
                 double thighCircuit,
                 double calfCircuit) {
-
-        this.date = new Date();
+        this.idMeasurment = 0;
+        this.date = new Date().toString();
         this.weight = weight;
         this.hight = hight;
         this.neckCircuit = neckCircuit;
