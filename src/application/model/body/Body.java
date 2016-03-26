@@ -31,7 +31,6 @@ public class Body {
 
     public Body(){};
 
-
     public Body(int idMeasurment,
                 String date,
                 double weight,
