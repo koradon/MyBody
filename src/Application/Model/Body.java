@@ -1,5 +1,7 @@
 package application.model;
 
+import javafx.beans.property.*;
+
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.Date;
@@ -9,22 +11,24 @@ import java.util.Date;
  */
 public class Body {
     private int idMeasurment;
-    private String date;
-    private double weight;
-    private double hight;
-    private double neckCircuit;
-    private double chestCircuit;
-    private double bicepsCircuit;
-    private double waistCircuit;
-    private double abdomenCircuit;
-    private double hipsCircuit;
-    private double thighCircuit;
-    private double calfCircuit;
+    private StringProperty date = new SimpleStringProperty(this, "date", "Unknown");
+    private DoubleProperty weight = new SimpleDoubleProperty(this, "weight", 0);
+    private DoubleProperty hight = new SimpleDoubleProperty(this, "hight", 0);
+    private DoubleProperty neckCircuit = new SimpleDoubleProperty(this, "neck", 0);
+    private DoubleProperty chestCircuit = new SimpleDoubleProperty(this, "chest", 0);
+    private DoubleProperty bicepsCircuit = new SimpleDoubleProperty(this, "biceps", 0);
+    private DoubleProperty waistCircuit = new SimpleDoubleProperty(this, "waist", 0);
+    private DoubleProperty abdomenCircuit = new SimpleDoubleProperty(this, "abdomen", 0);
+    private DoubleProperty hipsCircuit = new SimpleDoubleProperty(this, "hips", 0);
+    private DoubleProperty thighCircuit = new SimpleDoubleProperty(this, "thigh", 0);
+    private DoubleProperty calfCircuit = new SimpleDoubleProperty(this, "calf", 0);
 
     private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
 
     public Body(){};
 
+    
+    /*
     public Body(int idMeasurment,
                 String date,
                 double weight,
@@ -74,92 +78,6 @@ public class Body {
         this.thighCircuit = thighCircuit;
         this.calfCircuit = calfCircuit;
     }
+    */
 
-    public void addPropertyChangeListener(PropertyChangeListener listener){
-        pcs.addPropertyChangeListener(listener);
-    }
-
-    public void removePropertyChangeListener(PropertyChangeListener listener){
-        pcs.removePropertyChangeListener(listener);
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public double getHight() {
-        return hight;
-    }
-
-    public void setHight(double hight) {
-        this.hight = hight;
-    }
-
-    public double getNeckCircuit() {
-        return neckCircuit;
-    }
-
-    public void setNeckCircuit(double neckCircuit) {
-        this.neckCircuit = neckCircuit;
-    }
-
-    public double getChestCircuit() {
-        return chestCircuit;
-    }
-
-    public void setChestCircuit(double chestCircuit) {
-        this.chestCircuit = chestCircuit;
-    }
-
-    public double getBicepsCircuit() {
-        return bicepsCircuit;
-    }
-
-    public void setBicepsCircuit(double bicepsCircuit) {
-        this.bicepsCircuit = bicepsCircuit;
-    }
-
-    public double getWaistCircuit() {
-        return waistCircuit;
-    }
-
-    public void setWaistCircuit(double waistCircuit) {
-        this.waistCircuit = waistCircuit;
-    }
-
-    public double getAbdomenCircuit() {
-        return abdomenCircuit;
-    }
-
-    public void setAbdomenCircuit(double abdomenCircuit) {
-        this.abdomenCircuit = abdomenCircuit;
-    }
-
-    public double getHipsCircuit() {
-        return hipsCircuit;
-    }
-
-    public void setHipsCircuit(double hipsCircuit) {
-        this.hipsCircuit = hipsCircuit;
-    }
-
-    public double getThighCircuit() {
-        return thighCircuit;
-    }
-
-    public void setThighCircuit(double thighCircuit) {
-        this.thighCircuit = thighCircuit;
-    }
-
-    public double getCalfCircuit() {
-        return calfCircuit;
-    }
-
-    public void setCalfCircuit(double calfCircuit) {
-        this.calfCircuit = calfCircuit;
-    }
 }
