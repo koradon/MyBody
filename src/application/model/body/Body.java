@@ -1,4 +1,4 @@
-package application.model;
+package application.model.body;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -22,6 +22,7 @@ public class Body {
     private double calfCircuit;
 
     private double bmi;
+    private double wHR;
 
     private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
 
@@ -52,7 +53,8 @@ public class Body {
         this.thighCircuit = thighCircuit;
         this.calfCircuit = calfCircuit;
 
-        this.bmi = calculateBMI();
+        this.bmi = BodyParams.calculateBMI(this);
+        this.wHR = BodyParams.waistHipRatio(this);
     }
 
     public Body(double weight,
@@ -86,12 +88,6 @@ public class Body {
     public void removePropertyChangeListener(PropertyChangeListener listener){
         pcs.removePropertyChangeListener(listener);
     }
-
-    private double calculateBMI(){
-        double bmi = weight/(Math.pow(height/100,2));
-        System.out.println("Your BMI is: " + bmi);
-        return bmi;
-    };
 
     public double getWeight() {
         return weight;

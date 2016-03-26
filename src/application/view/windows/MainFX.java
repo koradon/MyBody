@@ -1,4 +1,4 @@
-package application.view;
+package application.view.windows;
 
 import javafx.application.Application;
 import javafx.stage.Stage;

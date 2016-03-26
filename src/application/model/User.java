@@ -19,7 +19,6 @@ public class User {
     private Date dateOfBirth;
 
     private int age;
-    private Body actualBody;
 
     DateFormat df;
 
@@ -63,9 +62,6 @@ public class User {
 
         return age;
     }
-
-
-
 
     public int getId() {
         return id;

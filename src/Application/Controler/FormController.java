@@ -1,7 +1,7 @@
 package application.controler;
 
-import application.model.Body;
-import application.model.BodyHistory;
+import application.model.body.Body;
+import application.model.body.BodyHistory;
 
 /**
  * Created by Michał on 17.03.2016.
