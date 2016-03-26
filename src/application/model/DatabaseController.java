@@ -81,20 +81,19 @@ public class DatabaseController {
     }
 
     public boolean insertUser(String username,
+                              String pass,
                               String name,
                               String lastname,
                               String gender){
         try{
-            PreparedStatement prepStmt = connection.prepareStatement(
-                    "insert into czytelnicy values (NULL, ?, ?, ?);");
-
             PreparedStatement stm =
                     connection.prepareStatement("INSERT INTO users " +
-                            "values (NULL, ?, ?, ?, ?)");
+                            "values (NULL, ?, ?, ?, ?, ?)");
             stm.setString(1, username);
-            stm.setString(2, name);
-            stm.setString(3, lastname);
-            stm.setString(4, gender);
+            stm.setString(2, pass);
+            stm.setString(3, name);
+            stm.setString(4, lastname);
+            stm.setString(5, gender);
             stm.execute();
         } catch (SQLException e) {
             System.err.println("Error creating a user");
@@ -162,15 +161,17 @@ public class DatabaseController {
             Statement st = connection.createStatement();
             ResultSet result = st.executeQuery("SELECT * FROM users");
             int id;
-            String username, name, lastname, gender;
+            String username, pass, name, lastname, gender, dateOfBirth;
 
             while(result.next()){
                 id = result.getInt("id_user");
                 username = result.getString("username");
+                pass = result.getString("pass");
                 name = result.getString("name");
                 lastname = result.getString("lastname");
                 gender = result.getString("gender");
-                userList.add(new User(id, username, name, lastname, gender));
+                dateOfBirth = result.getString("dateOfBirth");
+                userList.add(new User(id, username, pass, name, lastname, gender, dateOfBirth));
             }
         } catch (SQLException e) {
             System.err.println("Error retreiving users list");
