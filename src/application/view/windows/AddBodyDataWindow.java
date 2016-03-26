@@ -1,4 +1,4 @@
-package application.view;
+package application.view.windows;
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import application.controler.FormController;
-import application.model.Body;
+import application.model.body.Body;
 import application.view.charts.LineChart;
 import org.jfree.ui.RefineryUtilities;
 

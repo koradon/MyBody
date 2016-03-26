@@ -1,5 +1,6 @@
-import application.model.Body;
-import application.model.BodyHistory;
+import application.model.body.Body;
+import application.model.body.BodyHistory;
+import application.model.User;
 
 /**
  * Created by Michał on 17.03.2016.
@@ -7,11 +8,19 @@ import application.model.BodyHistory;
 public class Main {
     public static void main(String args[]){
         BodyHistory bh = new BodyHistory();
-        Body body1 = new Body(80,172,20,100,30,80,80,90,60,30);
-        Body body2 = new Body(81,172,20,100,30,80,80,90,60,30);
-        bh.updateBody(body1);
-        bh.updateBody(body2);
+        Body body1 = new Body(1,"2016",80,173,20,100,30,80,85,90,40,35);
+        Body body2 = new Body(2,"2016",83,173,20,100,30,80,90,95,40,35);
+        bh.addActualBody(body1);
+        bh.addActualBody(body2);
 
         bh.printBH();
+
+        //User u1 = new User(1, "michal", "pass", "Michał", "Sipa", "male", "1988/06/21" );
+        //User u2 = new User(2, "doro", "pass", "Dorota", "Dziendziel", "female", "1992/11/22");
+
+        //System.out.println(u1);
+        //System.out.println(u2);
     }
+
+
 }

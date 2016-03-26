@@ -1,5 +1,8 @@
 package application.view;
 
+import application.view.windows.AddBodyDataWindow;
+import application.view.windows.LoggingWindow;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
@@ -14,13 +17,13 @@ public class MainWindowTest {
             @Override
             public void run() {
 
-                final application.view.AddBodyDataWindow addBodyDataWindow = new application.view.AddBodyDataWindow();
+                final AddBodyDataWindow addBodyDataWindow = new AddBodyDataWindow();
                 addBodyDataWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 addBodyDataWindow.setTitle("MyBody! - Log your body");
                 addBodyDataWindow.setVisible(false);
 
 
-                application.view.LoggingWindow loggingFrame = new application.view.LoggingWindow();
+                LoggingWindow loggingFrame = new LoggingWindow();
                 loggingFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 loggingFrame.setTitle("MyBody!");
                 loggingFrame.addWindowListener(new WindowAdapter() {
