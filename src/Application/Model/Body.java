@@ -1,5 +1,7 @@
 package application.model;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.Date;
 
 /**
@@ -18,6 +20,10 @@ public class Body {
     private double hipsCircuit;
     private double thighCircuit;
     private double calfCircuit;
+
+    private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+
+    public Body(){};
 
     public Body(int idMeasurment,
                 String date,
@@ -67,6 +73,14 @@ public class Body {
         this.hipsCircuit = hipsCircuit;
         this.thighCircuit = thighCircuit;
         this.calfCircuit = calfCircuit;
+    }
+
+    public void addPropertyChangeListener(PropertyChangeListener listener){
+        pcs.addPropertyChangeListener(listener);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener listener){
+        pcs.removePropertyChangeListener(listener);
     }
 
     public double getWeight() {

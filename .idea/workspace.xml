@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f752380c-8d7f-49ee-a857-9de62e8de675" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/application/view/MainFX.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/application/model/DatabaseController.java" afterPath="$PROJECT_DIR$/src/application/model/DatabaseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/application/model/Measurment.java" afterPath="$PROJECT_DIR$/src/application/model/Measurment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/Model/Body.java" afterPath="$PROJECT_DIR$/src/Application/Model/Body.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/application/model/User.java" afterPath="$PROJECT_DIR$/src/application/model/User.java" />
     </list>
     <ignored path="MyBody.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,23 +28,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DatabaseController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DatabaseController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/model/DatabaseController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
+            <state relative-caret-position="601">
               <caret line="111" column="44" selection-start-line="111" selection-start-column="43" selection-end-line="111" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#222#223#0" expanded="true" />
-                <element signature="e#269#270#0" expanded="true" />
                 <element signature="method#createNewDatabase#0;class#DatabaseController#0" expanded="false" />
                 <element signature="method#insertUser#0;class#DatabaseController#0" expanded="false" />
                 <element signature="method#insertBody#0;class#DatabaseController#0" expanded="false" />
                 <element signature="method#insertMeasurment#0;class#DatabaseController#0" expanded="false" />
                 <element signature="method#selectUsers#0;class#DatabaseController#0" expanded="false" />
-                <element signature="e#5487#5493#0" expanded="true" />
                 <element signature="method#selectBody#0;class#DatabaseController#0" expanded="false" />
-                <element signature="e#6381#6387#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -51,11 +49,11 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
+            <state relative-caret-position="561">
+              <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
               <folding>
-                <element signature="e#1249#1250#0" expanded="true" />
-                <element signature="e#1294#1295#0" expanded="true" />
+                <element signature="e#1432#1433#0" expanded="true" />
+                <element signature="e#1477#1478#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,11 +62,36 @@
       <file leaf-file-name="Measurment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/model/Measurment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+            <state relative-caret-position="391">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainFX.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/application/view/MainFX.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
-                <element signature="e#312#313#0" expanded="true" />
-                <element signature="e#341#342#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Body.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/application/model/Body.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#Body#1;class#Body#0" expanded="false" />
+                <element signature="method#Body#2;class#Body#0" expanded="false" />
+                <element signature="e#2467#2468#0" expanded="true" />
+                <element signature="e#2522#2523#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,18 +100,8 @@
       <file leaf-file-name="MainWindowTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/application/view/MainWindowTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
+            <state relative-caret-position="170">
               <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Body.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/application/model/Body.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -115,17 +128,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/Application/View/MainWindowTest.java" />
-        <option value="$PROJECT_DIR$/src/application/model/User.java" />
         <option value="$PROJECT_DIR$/src/application/model/Measurment.java" />
-        <option value="$PROJECT_DIR$/src/application/model/Body.java" />
         <option value="$PROJECT_DIR$/src/application/model/DatabaseController.java" />
+        <option value="$PROJECT_DIR$/src/application/model/MainFX.java" />
+        <option value="$PROJECT_DIR$/src/application/view/MainFX.java" />
+        <option value="$PROJECT_DIR$/src/application/model/User.java" />
+        <option value="$PROJECT_DIR$/src/application/model/Body.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="645" />
-    <option name="width" value="666" />
-    <option name="height" value="775" />
+    <option name="x" value="55" />
+    <option name="width" value="943" />
+    <option name="height" value="1087" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -153,7 +168,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -268,6 +282,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -275,11 +290,16 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="application.view" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.DatabaseController">
     <configuration default="false" name="DatabaseController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="application.model.*" />
+          <option name="PATTERN" value="application.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -474,36 +494,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -560,21 +550,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="package" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workingDirectory" value="" />
-      <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
-      <setting name="showProgressMessages" value="true" />
-      <envs />
-      <method />
-    </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Application.DatabaseController" />
     </list>
@@ -606,7 +581,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="645" y="0" width="666" height="775" extended-state="0" />
+    <frame x="55" y="0" width="943" height="1087" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -619,7 +594,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06923077" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2599784" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -655,6 +630,57 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/application/model/DatabaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#createNewDatabase#0;class#DatabaseController#0" expanded="false" />
+            <element signature="method#insertUser#0;class#DatabaseController#0" expanded="false" />
+            <element signature="method#insertBody#0;class#DatabaseController#0" expanded="false" />
+            <element signature="method#insertMeasurment#0;class#DatabaseController#0" expanded="false" />
+            <element signature="method#selectUsers#0;class#DatabaseController#0" expanded="false" />
+            <element signature="method#selectBody#0;class#DatabaseController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
+          <folding>
+            <element signature="e#1432#1433#0" expanded="true" />
+            <element signature="e#1477#1478#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/Measurment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/view/MainWindowTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/Body.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/Body.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -669,16 +695,12 @@
           <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#269#270#0" expanded="true" />
             <element signature="method#createNewDatabase#0;class#DatabaseController#0" expanded="false" />
             <element signature="method#insertUser#0;class#DatabaseController#0" expanded="false" />
             <element signature="method#insertBody#0;class#DatabaseController#0" expanded="false" />
             <element signature="method#insertMeasurment#0;class#DatabaseController#0" expanded="false" />
             <element signature="method#selectUsers#0;class#DatabaseController#0" expanded="false" />
-            <element signature="e#5487#5493#0" expanded="true" />
             <element signature="method#selectBody#0;class#DatabaseController#0" expanded="false" />
-            <element signature="e#6381#6387#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -688,8 +710,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1249#1250#0" expanded="true" />
-            <element signature="e#1294#1295#0" expanded="true" />
+            <element signature="e#1432#1433#0" expanded="true" />
+            <element signature="e#1477#1478#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -698,10 +720,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding>
-            <element signature="e#312#313#0" expanded="true" />
-            <element signature="e#341#342#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -729,20 +748,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
-          <folding>
-            <element signature="e#1249#1250#0" expanded="true" />
-            <element signature="e#1294#1295#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/application/view/MainWindowTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
+        <state relative-caret-position="170">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
@@ -750,39 +758,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/Measurment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        <state relative-caret-position="391">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
           <folding>
-            <element signature="e#312#313#0" expanded="true" />
-            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#1432#1433#0" expanded="true" />
+            <element signature="e#1477#1478#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/model/DatabaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="111" column="44" selection-start-line="111" selection-start-column="43" selection-end-line="111" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#createNewDatabase#0;class#DatabaseController#0" expanded="false" />
+            <element signature="method#insertUser#0;class#DatabaseController#0" expanded="false" />
+            <element signature="method#insertBody#0;class#DatabaseController#0" expanded="false" />
+            <element signature="method#insertMeasurment#0;class#DatabaseController#0" expanded="false" />
+            <element signature="method#selectUsers#0;class#DatabaseController#0" expanded="false" />
+            <element signature="method#selectBody#0;class#DatabaseController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/application/view/MainFX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/application/model/Body.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="42" selection-start-line="58" selection-start-column="42" selection-end-line="58" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/application/model/DatabaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="111" column="44" selection-start-line="111" selection-start-column="43" selection-end-line="111" selection-end-column="44" />
+        <state relative-caret-position="391">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#269#270#0" expanded="true" />
-            <element signature="method#createNewDatabase#0;class#DatabaseController#0" expanded="false" />
-            <element signature="method#insertUser#0;class#DatabaseController#0" expanded="false" />
-            <element signature="method#insertBody#0;class#DatabaseController#0" expanded="false" />
-            <element signature="method#insertMeasurment#0;class#DatabaseController#0" expanded="false" />
-            <element signature="method#selectUsers#0;class#DatabaseController#0" expanded="false" />
-            <element signature="e#5487#5493#0" expanded="true" />
-            <element signature="method#selectBody#0;class#DatabaseController#0" expanded="false" />
-            <element signature="e#6381#6387#0" expanded="true" />
+            <element signature="method#Body#1;class#Body#0" expanded="false" />
+            <element signature="method#Body#2;class#Body#0" expanded="false" />
+            <element signature="e#2467#2468#0" expanded="true" />
+            <element signature="e#2522#2523#0" expanded="true" />
           </folding>
         </state>
       </provider>
