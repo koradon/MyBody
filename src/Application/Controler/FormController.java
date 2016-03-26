@@ -13,7 +13,7 @@ public class FormController {
 
     public static boolean saveBodyData(Body body){
         try{
-            if(bodyHistory.updateBody(body)){
+            if(bodyHistory.addActualBody(body)){
                 bodyHistory.printBH();
                 return true;
             }else{
@@ -52,7 +52,7 @@ public class FormController {
 
                     BodyHistory bh = new BodyHistory();
 
-                    if(bh.updateBody(body)){
+                    if(bh.addActualBody(body)){
                         bh.printBH();
                         return true;
                     }else{

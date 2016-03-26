@@ -11,7 +11,7 @@ public class Body {
     private int idMeasurment;
     private String date;
     private double weight;
-    private double hight;
+    private double height;
     private double neckCircuit;
     private double chestCircuit;
     private double bicepsCircuit;
@@ -21,6 +21,8 @@ public class Body {
     private double thighCircuit;
     private double calfCircuit;
 
+    private double bmi;
+
     private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
 
     public Body(){};
@@ -28,7 +30,7 @@ public class Body {
     public Body(int idMeasurment,
                 String date,
                 double weight,
-                double hight,
+                double height,
                 double neckCircuit,
                 double chestCircuit,
                 double bicepsCircuit,
@@ -40,7 +42,7 @@ public class Body {
         this.idMeasurment = idMeasurment;
         this.date = date;
         this.weight = weight;
-        this.hight = hight;
+        this.height = height;
         this.neckCircuit = neckCircuit;
         this.chestCircuit = chestCircuit;
         this.bicepsCircuit = bicepsCircuit;
@@ -49,10 +51,12 @@ public class Body {
         this.hipsCircuit = hipsCircuit;
         this.thighCircuit = thighCircuit;
         this.calfCircuit = calfCircuit;
+
+        this.bmi = calculateBMI();
     }
 
     public Body(double weight,
-                double hight,
+                double height,
                 double neckCircuit,
                 double chestCircuit,
                 double bicepsCircuit,
@@ -64,7 +68,7 @@ public class Body {
         this.idMeasurment = 0;
         this.date = new Date().toString();
         this.weight = weight;
-        this.hight = hight;
+        this.height = height;
         this.neckCircuit = neckCircuit;
         this.chestCircuit = chestCircuit;
         this.bicepsCircuit = bicepsCircuit;
@@ -83,6 +87,12 @@ public class Body {
         pcs.removePropertyChangeListener(listener);
     }
 
+    private double calculateBMI(){
+        double bmi = weight/(Math.pow(height/100,2));
+        System.out.println("Your BMI is: " + bmi);
+        return bmi;
+    };
+
     public double getWeight() {
         return weight;
     }
@@ -91,12 +101,12 @@ public class Body {
         this.weight = weight;
     }
 
-    public double getHight() {
-        return hight;
+    public double getHeight() {
+        return height;
     }
 
-    public void setHight(double hight) {
-        this.hight = hight;
+    public void setHeight(double height) {
+        this.height = height;
     }
 
     public double getNeckCircuit() {
