@@ -1,45 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f752380c-8d7f-49ee-a857-9de62e8de675" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/application/model/body/Body.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/application/model/body/BodyHistory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/application/model/body/BodyParams.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/application/view/windows/AddBodyDataWindow.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/application/view/windows/LoggingWindow.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MyBody/Application/Model/Body.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MyBody/Application/Model/BodyHistory.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MyBody/application/model/BodyObserver.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MyBody/application/model/BodyParams.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MyBody/application/model/DatabaseController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MyBody/application/model/Measurment.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MyBody/application/view/charts/PieChart.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Model/Body.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Model/BodyHistory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/View/AddBodyDataWindow.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/View/LoggingWindow.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/application/model/BodyObserver.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/application/model/BodyParams.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/application/model/SubjectOfInterest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/application/view/charts/PieChart.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyBody/Application/Controler/FormController.class" afterPath="$PROJECT_DIR$/out/production/MyBody/Application/Controler/FormController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyBody/Application/View/AddBodyDataWindow$1.class" afterPath="$PROJECT_DIR$/out/production/MyBody/Application/View/AddBodyDataWindow$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyBody/Main.class" afterPath="$PROJECT_DIR$/out/production/MyBody/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyBody/application/model/User.class" afterPath="$PROJECT_DIR$/out/production/MyBody/application/model/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyBody/application/view/AddBodyDataWindow$2.class" afterPath="$PROJECT_DIR$/out/production/MyBody/application/view/AddBodyDataWindow$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyBody/application/view/charts/LineChart.class" afterPath="$PROJECT_DIR$/out/production/MyBody/application/view/charts/LineChart.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/Controler/FormController.java" afterPath="$PROJECT_DIR$/src/Application/Controler/FormController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Application/View/MainWindowTest.java" afterPath="$PROJECT_DIR$/src/Application/View/MainWindowTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/application/model/User.java" afterPath="$PROJECT_DIR$/src/application/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/application/view/charts/LineChart.java" afterPath="$PROJECT_DIR$/src/application/view/charts/LineChart.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/application/model/BodyObserver.java" afterPath="$PROJECT_DIR$/src/application/model/body/observerInterfaces/BodyObserver.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/application/model/DatabaseController.java" afterPath="$PROJECT_DIR$/src/application/model/database/DatabaseController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/application/model/Measurment.java" afterPath="$PROJECT_DIR$/src/application/model/database/Measurment.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/application/model/SubjectOfInterest.java" afterPath="$PROJECT_DIR$/src/application/model/body/observerInterfaces/SubjectOfInterest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/application/view/MainFX.java" afterPath="$PROJECT_DIR$/src/application/view/windows/MainFX.java" />
-    </list>
+    <list default="true" id="f752380c-8d7f-49ee-a857-9de62e8de675" name="Default" comment="" />
     <ignored path="MyBody.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -765,7 +727,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="0" width="943" height="1087" extended-state="0" />
+    <frame x="55" y="0" width="943" height="1087" extended-state="1" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
