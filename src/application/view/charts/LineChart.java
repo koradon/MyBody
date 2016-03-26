@@ -1,6 +1,6 @@
 package application.view.charts;
 
-import application.model.BodyHistory;
+import application.model.body.BodyHistory;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -51,7 +51,7 @@ public class LineChart extends JFrame {
 
         for(int i=0; i< bodyHistory.getBodyHistory().size(); i++){
             weight.add(i, bodyHistory.getBodyHistory().get(i).getWeight());
-            height.add(i, bodyHistory.getBodyHistory().get(i).getHight());
+            height.add(i, bodyHistory.getBodyHistory().get(i).getHeight());
             neck.add(i, bodyHistory.getBodyHistory().get(i).getNeckCircuit());
             chest.add(i, bodyHistory.getBodyHistory().get(i).getChestCircuit());
             biceps.add(i, bodyHistory.getBodyHistory().get(i).getBicepsCircuit());
