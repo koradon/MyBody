@@ -1,4 +1,4 @@
-package application.model;
+package application.model.database;
 
 /**
  * Created by Dorotka on 2016-03-21.

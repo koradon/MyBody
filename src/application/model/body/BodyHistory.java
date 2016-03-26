@@ -1,4 +1,7 @@
-package application.model;
+package application.model.body;
+
+import application.model.body.observerInterfaces.BodyObserver;
+import application.model.body.observerInterfaces.SubjectOfInterest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +12,7 @@ import java.util.List;
 public class BodyHistory implements SubjectOfInterest {
     private List<BodyObserver> bodyObservers = new ArrayList<BodyObserver>();
     private ArrayList<Body> bodyHistory = new ArrayList<>();
-    private Body actualBody = bodyHistory.get(bodyHistory.size()-1);
+    private Body actualBody;
 
     public BodyHistory(ArrayList<Body> bodyHistory) {
         this.bodyHistory = bodyHistory;
@@ -21,6 +24,7 @@ public class BodyHistory implements SubjectOfInterest {
     public boolean addActualBody(Body body){
         try{
             bodyHistory.add(body);
+            actualBody = bodyHistory.get(bodyHistory.size()-1);
             notifyBodyObservers();
             return true;
         }
