@@ -190,12 +190,12 @@ public class SQLiteDatabase {
         return userList;
     }
 
-    public List<Body> selectBody(){
+    public List<Body> selectAllBodyEntries(){
         List<Body> bodyList = new LinkedList<Body>();
 
         try {
             Statement st = connection.createStatement();
-            ResultSet result = st.executeQuery("SELECT * FROM users");
+            ResultSet result = st.executeQuery("SELECT * FROM body");
             String date;
             int id, weight, height, neck, chest, biceps, waist,
                     abdomen, hips, thigh, calf;
