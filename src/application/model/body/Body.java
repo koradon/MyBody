@@ -1,5 +1,7 @@
 package application.model.body;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.Date;
 
 /**
@@ -9,7 +11,7 @@ public class Body {
     private int idMeasurment;
     private String date;
     private double weight;
-    private double hight;
+    private double height;
     private double neckCircuit;
     private double chestCircuit;
     private double bicepsCircuit;
@@ -19,10 +21,17 @@ public class Body {
     private double thighCircuit;
     private double calfCircuit;
 
+    private double bmi;
+    private double wHR;
+
+    private PropertyChangeSupport pcs = new PropertyChangeSupport(this);
+
+    public Body(){};
+
     public Body(int idMeasurment,
                 String date,
                 double weight,
-                double hight,
+                double height,
                 double neckCircuit,
                 double chestCircuit,
                 double bicepsCircuit,
@@ -34,7 +43,7 @@ public class Body {
         this.idMeasurment = idMeasurment;
         this.date = date;
         this.weight = weight;
-        this.hight = hight;
+        this.height = height;
         this.neckCircuit = neckCircuit;
         this.chestCircuit = chestCircuit;
         this.bicepsCircuit = bicepsCircuit;
@@ -43,10 +52,13 @@ public class Body {
         this.hipsCircuit = hipsCircuit;
         this.thighCircuit = thighCircuit;
         this.calfCircuit = calfCircuit;
+
+        this.bmi = BodyParams.calculateBMI(this);
+        this.wHR = BodyParams.waistHipRatio(this);
     }
 
     public Body(double weight,
-                double hight,
+                double height,
                 double neckCircuit,
                 double chestCircuit,
                 double bicepsCircuit,
@@ -58,7 +70,7 @@ public class Body {
         this.idMeasurment = 0;
         this.date = new Date().toString();
         this.weight = weight;
-        this.hight = hight;
+        this.height = height;
         this.neckCircuit = neckCircuit;
         this.chestCircuit = chestCircuit;
         this.bicepsCircuit = bicepsCircuit;
@@ -69,6 +81,14 @@ public class Body {
         this.calfCircuit = calfCircuit;
     }
 
+    public void addPropertyChangeListener(PropertyChangeListener listener){
+        pcs.addPropertyChangeListener(listener);
+    }
+
+    public void removePropertyChangeListener(PropertyChangeListener listener){
+        pcs.removePropertyChangeListener(listener);
+    }
+
     public double getWeight() {
         return weight;
     }
@@ -77,12 +97,12 @@ public class Body {
         this.weight = weight;
     }
 
-    public double getHight() {
-        return hight;
+    public double getHeight() {
+        return height;
     }
 
-    public void setHight(double hight) {
-        this.hight = hight;
+    public void setHeight(double height) {
+        this.height = height;
     }
 
     public double getNeckCircuit() {

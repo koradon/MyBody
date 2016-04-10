@@ -53,6 +53,7 @@ public class AddNewBodyToDatabaseController {
 
                     if(bodyHistory.updateBody(body)){
                         bodyHistory.printBH();
+
                         return true;
                     }else{
                         return false;
