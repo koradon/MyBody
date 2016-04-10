@@ -17,13 +17,16 @@ public class MainWindowTest {
             @Override
             public void run() {
 
-                final AddBodyDataWindow addBodyDataWindow = new AddBodyDataWindow();
+                final AddNewBodyToDatabaseWindow addBodyDataWindow = new AddNewBodyToDatabaseWindow();
+
                 addBodyDataWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 addBodyDataWindow.setTitle("MyBody! - Log your body");
                 addBodyDataWindow.setVisible(false);
 
 
-                LoggingWindow loggingFrame = new LoggingWindow();
+
+                UserLoggingWindow loggingFrame = new UserLoggingWindow();
+
                 loggingFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 loggingFrame.setTitle("MyBody!");
                 loggingFrame.addWindowListener(new WindowAdapter() {

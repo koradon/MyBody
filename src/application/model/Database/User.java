@@ -1,4 +1,4 @@
-package application.model;
+package application.model.Database;
 
 import java.text.DateFormat;
 import java.text.ParseException;

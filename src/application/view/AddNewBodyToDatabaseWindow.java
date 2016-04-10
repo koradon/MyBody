@@ -1,4 +1,4 @@
-package application.view.windows;
+package application.view;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,7 +14,7 @@ import org.jfree.ui.RefineryUtilities;
 /**
  * Created by Michał on 17.03.2016.
  */
-public class AddBodyDataWindow extends JFrame {
+public class AddNewBodyToDatabaseWindow extends JFrame {
     Toolkit kit = Toolkit.getDefaultToolkit();
     Dimension screenSize = kit.getScreenSize();
     private int DEFAULT_WIDTH = screenSize.width;
@@ -25,7 +25,7 @@ public class AddBodyDataWindow extends JFrame {
         super.setSize(DEFAULT_WIDTH/2, DEFAULT_HEIGHT/2);
     }
 
-    public AddBodyDataWindow(){
+    public AddNewBodyToDatabaseWindow(){
         final JTextField weightTF = new JTextField();
         final JTextField heightTF = new JTextField();
         final JTextField neckTF = new JTextField();

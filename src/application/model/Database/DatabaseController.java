@@ -1,7 +1,6 @@
-package application.model.database;
+package application.model.Database;
 
 import application.model.body.Body;
-import application.model.User;
 
 import java.sql.*;
 import java.util.*;
@@ -38,7 +37,7 @@ public class DatabaseController {
             if(connection != null){
                 DatabaseMetaData metadata = connection.getMetaData();
                 System.out.println("Database driver: " + metadata.getDriverName());
-                System.out.println("Created database");
+                System.out.println("Created Database");
             }
         }catch (SQLException e){
             System.out.println(e.getMessage());
