@@ -31,7 +31,6 @@ public class SQLiteDatabase {
 
     }
 
-
     public void createNewDatabase(String fileName){
         String sqlDatabaseUrl = "jdbc:sqlite:";
         if(fileName.endsWith(".db")){
@@ -55,6 +54,7 @@ public class SQLiteDatabase {
         String createUsers = "CREATE TABLE IF NOT EXISTS users " +
                 "(id_user INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "username varchar(255), " +
+                "pass varchar(255)" +
                 "name varchar(255), " +
                 "lastname varchar(255), " +
                 "gender varchar(255))";
@@ -106,6 +106,21 @@ public class SQLiteDatabase {
             stm.execute();
         } catch (SQLException e) {
             System.err.println("Error creating a user");
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    public boolean authenticateUser(String username, String pass){
+        try{
+            PreparedStatement stm =
+                    connection.prepareStatement("SELECT id_user FROM users " +
+                            "WHERE username=? and pass=?");
+            stm.setString(1, username);
+            stm.setString(2, pass);
+            stm.execute();
+        }catch (SQLException e){
             e.printStackTrace();
             return false;
         }
