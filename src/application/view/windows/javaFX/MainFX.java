@@ -1,4 +1,4 @@
-package application.view.windows;
+package application.view.windows.javaFX;
 
 import javafx.application.Application;
 import javafx.stage.Stage;

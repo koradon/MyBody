@@ -1,7 +1,7 @@
 package application.view;
 
-import application.view.windows.AddBodyDataWindow;
-import application.view.windows.LoggingWindow;
+import application.view.windows.swing.AddNewBodyToDatabaseWindow;
+import application.view.windows.swing.UserLoggingWindow;
 
 import javax.swing.*;
 import java.awt.*;

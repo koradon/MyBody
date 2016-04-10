@@ -1,4 +1,4 @@
-package application.view;
+package application.view.windows.swing;
 
 import javax.swing.*;
 import java.awt.*;
