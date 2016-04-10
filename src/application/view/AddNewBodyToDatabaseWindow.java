@@ -5,8 +5,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import application.controler.FormController;
-import application.model.Body;
+import application.controler.AddNewBodyToDatabaseController;
+import application.model.body.Body;
 import application.view.charts.LineChart;
 import org.jfree.ui.RefineryUtilities;
 
@@ -14,7 +14,7 @@ import org.jfree.ui.RefineryUtilities;
 /**
  * Created by Michał on 17.03.2016.
  */
-public class AddBodyDataWindow extends JFrame {
+public class AddNewBodyToDatabaseWindow extends JFrame {
     Toolkit kit = Toolkit.getDefaultToolkit();
     Dimension screenSize = kit.getScreenSize();
     private int DEFAULT_WIDTH = screenSize.width;
@@ -25,7 +25,7 @@ public class AddBodyDataWindow extends JFrame {
         super.setSize(DEFAULT_WIDTH/2, DEFAULT_HEIGHT/2);
     }
 
-    public AddBodyDataWindow(){
+    public AddNewBodyToDatabaseWindow(){
         final JTextField weightTF = new JTextField();
         final JTextField heightTF = new JTextField();
         final JTextField neckTF = new JTextField();
@@ -81,7 +81,7 @@ public class AddBodyDataWindow extends JFrame {
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(FormController.saveBodyData(new Body(Double.parseDouble(weightTF.getText()),
+                if(AddNewBodyToDatabaseController.addNewBodyToDatabase(new Body(Double.parseDouble(weightTF.getText()),
                                               Double.parseDouble(heightTF.getText()),
                                               Double.parseDouble(neckTF.getText()),
                                               Double.parseDouble(chestTF.getText()),
@@ -103,7 +103,7 @@ public class AddBodyDataWindow extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 LineChart chart = new LineChart("Body Dimension History",
-                                                FormController.getBodyHistory());
+                                                AddNewBodyToDatabaseController.getBodyHistory());
                 chart.pack();
                 RefineryUtilities.centerFrameOnScreen(chart);
                 chart.setVisible(true);

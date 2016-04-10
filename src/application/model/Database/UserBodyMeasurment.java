@@ -1,14 +1,14 @@
-package application.model;
+package application.model.Database;
 
 /**
  * Created by Dorotka on 2016-03-21.
  */
-public class Measurment {
+public class UserBodyMeasurment {
     private int idUser;
     private int idBody;
 
-    public Measurment(int idUser,
-                      int idBody) {
+    public UserBodyMeasurment(int idUser,
+                              int idBody) {
         this.idUser = idUser;
         this.idBody = idBody;
     }

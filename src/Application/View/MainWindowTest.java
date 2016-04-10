@@ -14,13 +14,13 @@ public class MainWindowTest {
             @Override
             public void run() {
 
-                final application.view.AddBodyDataWindow addBodyDataWindow = new application.view.AddBodyDataWindow();
+                final AddNewBodyToDatabaseWindow addBodyDataWindow = new AddNewBodyToDatabaseWindow();
                 addBodyDataWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 addBodyDataWindow.setTitle("MyBody! - Log your body");
                 addBodyDataWindow.setVisible(false);
 
 
-                application.view.LoggingWindow loggingFrame = new application.view.LoggingWindow();
+                UserLoggingWindow loggingFrame = new UserLoggingWindow();
                 loggingFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                 loggingFrame.setTitle("MyBody!");
                 loggingFrame.addWindowListener(new WindowAdapter() {

@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by Michał on 17.03.2016.
  */
-public class LoggingWindow extends JFrame {
+public class UserLoggingWindow extends JFrame {
     private Toolkit kit = Toolkit.getDefaultToolkit();
     private Dimension screenSize = kit.getScreenSize();
     private int DEFAULT_WIDTH = screenSize.width;
@@ -20,7 +20,7 @@ public class LoggingWindow extends JFrame {
         super.setSize(DEFAULT_WIDTH/2, DEFAULT_HEIGHT/2);
     }
 
-    public LoggingWindow(){
+    public UserLoggingWindow(){
         JPanel centerPanel = new JPanel();
         JPanel northPanel = new JPanel();
         JPanel southPanel = new JPanel();

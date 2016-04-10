@@ -1,17 +1,16 @@
 package application.controler;
 
-import application.model.Body;
-import application.model.BodyHistory;
+import application.model.body.Body;
+import application.model.body.BodyHistory;
 
 /**
  * Created by Michał on 17.03.2016.
  */
-public class FormController {
+public class AddNewBodyToDatabaseController {
 
     private static BodyHistory bodyHistory = new BodyHistory();
 
-
-    public static boolean saveBodyData(Body body){
+    public static boolean addNewBodyToDatabase(Body body){
         try{
             if(bodyHistory.updateBody(body)){
                 bodyHistory.printBH();
@@ -27,16 +26,16 @@ public class FormController {
 
     }
 
-    public static boolean saveBodyData(double weight,
-                                        double hight,
-                                        double neckCircuit,
-                                        double chestCircuit,
-                                        double bicepsCircuit,
-                                        double waistCircuit,
-                                        double abdomenCircuit,
-                                        double hipsCircuit,
-                                        double thighCircuit,
-                                        double calfCircuit){
+    public static boolean addNewBodyToDatabase(double weight,
+                                               double hight,
+                                               double neckCircuit,
+                                               double chestCircuit,
+                                               double bicepsCircuit,
+                                               double waistCircuit,
+                                               double abdomenCircuit,
+                                               double hipsCircuit,
+                                               double thighCircuit,
+                                               double calfCircuit){
 
                 try{
                     Body body = new Body(weight,
@@ -50,10 +49,10 @@ public class FormController {
                             thighCircuit,
                             calfCircuit);
 
-                    BodyHistory bh = new BodyHistory();
+                    BodyHistory bodyHistory = new BodyHistory();
 
-                    if(bh.updateBody(body)){
-                        bh.printBH();
+                    if(bodyHistory.updateBody(body)){
+                        bodyHistory.printBH();
                         return true;
                     }else{
                         return false;

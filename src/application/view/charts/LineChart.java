@@ -1,6 +1,6 @@
 package application.view.charts;
 
-import application.model.BodyHistory;
+import application.model.body.BodyHistory;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;

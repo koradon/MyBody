@@ -1,4 +1,6 @@
-package application.model;
+package application.model.Database;
+
+import application.model.body.Body;
 
 import java.sql.*;
 import java.util.*;
