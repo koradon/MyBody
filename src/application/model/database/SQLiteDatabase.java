@@ -148,7 +148,7 @@ public class SQLiteDatabase {
         return true;
     }
 
-    public boolean insertNewUserBodyMeasurmentRelation(int idUser, int idBody){
+    public boolean insertNewUserBodyMeasurment(int idUser, int idBody){
         try {
             PreparedStatement stm =
                     connection.prepareStatement("INSERT INTO measurment " +
