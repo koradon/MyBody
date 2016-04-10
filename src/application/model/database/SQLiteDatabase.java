@@ -190,6 +190,9 @@ public class SQLiteDatabase {
         return userList;
     }
 
+    /*
+    Only for testing
+     */
     public List<Body> selectAllBodyEntries(){
         List<Body> bodyList = new LinkedList<Body>();
 
