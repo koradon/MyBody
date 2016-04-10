@@ -5,7 +5,7 @@ import application.model.body.Body;
 /**
  * Created by Michał on 26.03.2016.
  */
-public class BodyParams {
+public class BodyCalculableParameters {
     public static double calculateBMI(Body body){
         double bmi = body.getWeight()/(Math.pow(body.getHeight()/100,2));
         System.out.println("Your BMI is: " + bmi);

@@ -1,4 +1,4 @@
-package application.model.Database;
+package application.model.database;
 
 import application.model.body.Body;
 
@@ -8,10 +8,11 @@ import java.util.*;
 /**
  * Created by Dorotka on 2016-03-21.
  */
-public class DatabaseController {
+public class SQLiteDatabase {
     private Connection connection = null;
+    private String sqlDatabaseUrl = "jdbc:sqlite:myBodyDatabase.db";
 
-    public DatabaseController() {
+    public SQLiteDatabase() {
         this.connection = connectToDB();
     }
 
@@ -19,8 +20,8 @@ public class DatabaseController {
         Connection connection = null;
 
         try{
-            String url = "jdbc:sqlite:myBodyDatabase.db";
-            connection = DriverManager.getConnection(url);
+            String sqlDatabaseUrl = "jdbc:sqlite:myBodyDatabase.db";
+            connection = DriverManager.getConnection(sqlDatabaseUrl);
             System.out.println("Connected to myBodyDatabase");
         }catch (SQLException e){
             System.out.println(e.getMessage());
@@ -30,14 +31,20 @@ public class DatabaseController {
 
     }
 
-    public void createNewDatabase(String fileName){
-        String url = "jdbc:sqlite:myBodyDatabase.db" + fileName;
 
-        try(Connection connection = DriverManager.getConnection(url)){
+    public void createNewDatabase(String fileName){
+        String sqlDatabaseUrl = "jdbc:sqlite:";
+        if(fileName.endsWith(".db")){
+            sqlDatabaseUrl = sqlDatabaseUrl+fileName;
+        }else{
+            sqlDatabaseUrl = sqlDatabaseUrl + fileName + ".db";
+        }
+
+        try(Connection connection = DriverManager.getConnection(sqlDatabaseUrl)){
             if(connection != null){
                 DatabaseMetaData metadata = connection.getMetaData();
-                System.out.println("Database driver: " + metadata.getDriverName());
-                System.out.println("Created Database");
+                System.out.println("database driver: " + metadata.getDriverName());
+                System.out.println("Created database");
             }
         }catch (SQLException e){
             System.out.println(e.getMessage());
@@ -105,7 +112,7 @@ public class DatabaseController {
         return true;
     }
 
-    public boolean insertBody(String date,
+    public boolean insertNewUserBodyMeasurment(String date,
                               double weight,
                               double height,
                               double neck,
@@ -141,7 +148,10 @@ public class DatabaseController {
         return true;
     }
 
-    public boolean insertMeasurment(int idUser, int idBody){
+    /*
+    test comment
+     */
+    public boolean insertNewUserBodyMeasurmentRelation(int idUser, int idBody){
         try {
             PreparedStatement stm =
                     connection.prepareStatement("INSERT INTO measurment " +
@@ -156,7 +166,7 @@ public class DatabaseController {
         return true;
     }
 
-    public List<User> selectUsers(){
+    public List<User> selectAllUsers(){
         List<User> userList = new LinkedList<User>();
 
         try {
@@ -216,6 +226,6 @@ public class DatabaseController {
     }
 
     public static void main(String[] args){
-        DatabaseController dbc = new DatabaseController();
+        SQLiteDatabase dbc = new SQLiteDatabase();
     }
 }

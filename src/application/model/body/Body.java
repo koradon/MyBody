@@ -53,8 +53,8 @@ public class Body {
         this.thighCircuit = thighCircuit;
         this.calfCircuit = calfCircuit;
 
-        this.bmi = BodyParams.calculateBMI(this);
-        this.wHR = BodyParams.waistHipRatio(this);
+        this.bmi = BodyCalculableParameters.calculateBMI(this);
+        this.wHR = BodyCalculableParameters.waistHipRatio(this);
     }
 
     public Body(double weight,
