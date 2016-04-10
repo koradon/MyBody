@@ -148,9 +148,6 @@ public class SQLiteDatabase {
         return true;
     }
 
-    /*
-    test comment
-     */
     public boolean insertNewUserBodyMeasurmentRelation(int idUser, int idBody){
         try {
             PreparedStatement stm =
