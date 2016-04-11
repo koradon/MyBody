@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * Created by Dorotka on 2016-03-21.
  */
-public class SQLiteDatabase {
+public class SQLiteDatabase implements Database {
     private Connection connection = null;
     private String sqlDatabaseUrl = "jdbc:sqlite:myBodyDatabase.db";
 
@@ -20,7 +20,6 @@ public class SQLiteDatabase {
         Connection connection = null;
 
         try{
-            String sqlDatabaseUrl = "jdbc:sqlite:myBodyDatabase.db";
             connection = DriverManager.getConnection(sqlDatabaseUrl);
             System.out.println("Connected to myBodyDatabase");
         }catch (SQLException e){
@@ -54,15 +53,17 @@ public class SQLiteDatabase {
         String createUsers = "CREATE TABLE IF NOT EXISTS users " +
                 "(id_user INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "username varchar(255), " +
-                "pass varchar(255)" +
+                "pass varchar(255)," +
                 "name varchar(255), " +
                 "lastname varchar(255), " +
-                "gender varchar(255))";
+                "gender varchar(255)," +
+                "dateOfBirth varchar(255))";
         String createBody = "CREATE TABLE IF NOT EXISTS body " +
                 "(id_body INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "id_user integer, " +
                 "date varchar(255), " +
                 "weight double, " +
-                "hight double, " +
+                "height double, " +
                 "neck double, " +
                 "chest double, " +
                 "biceps double, " +
@@ -89,20 +90,17 @@ public class SQLiteDatabase {
         return true;
     }
 
-    public boolean insertUser(String username,
-                              String pass,
-                              String name,
-                              String lastname,
-                              String gender){
+    public boolean insertUser(User user){
         try{
             PreparedStatement stm =
                     connection.prepareStatement("INSERT INTO users " +
-                            "values (NULL, ?, ?, ?, ?, ?)");
-            stm.setString(1, username);
-            stm.setString(2, pass);
-            stm.setString(3, name);
-            stm.setString(4, lastname);
-            stm.setString(5, gender);
+                            "values (NULL, ?, ?, ?, ?, ?, ?)");
+            stm.setString(1, user.getUsername());
+            stm.setString(2, user.getPassword());
+            stm.setString(3, user.getName());
+            stm.setString(4, user.getLastName());
+            stm.setString(5, user.getGender());
+            stm.setString(6, user.getDateOfBirth());
             stm.execute();
         } catch (SQLException e) {
             System.err.println("Error creating a user");
@@ -112,13 +110,13 @@ public class SQLiteDatabase {
         return true;
     }
 
-    public boolean authenticateUser(String username, String pass){
+    public boolean findUserLogons(User user){
         try{
             PreparedStatement stm =
                     connection.prepareStatement("SELECT id_user FROM users " +
                             "WHERE username=? and pass=?");
-            stm.setString(1, username);
-            stm.setString(2, pass);
+            stm.setString(1, user.getUsername());
+            stm.setString(2, user.getPassword());
             stm.execute();
         }catch (SQLException e){
             e.printStackTrace();
@@ -127,32 +125,23 @@ public class SQLiteDatabase {
         return true;
     }
 
-    public boolean insertNewUserBodyMeasurment(String date,
-                              double weight,
-                              double height,
-                              double neck,
-                              double chest,
-                              double biceps,
-                              double waist,
-                              double abdomen,
-                              double hips,
-                              double thigh,
-                              double calf){
+    public boolean insertNewUserBodyData(User user, Body body){
         try {
             PreparedStatement stm =
                     connection.prepareStatement("INSERT INTO body " +
-                            "values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,");
-            stm.setString(1, date);
-            stm.setDouble(2, weight);
-            stm.setDouble(3, height);
-            stm.setDouble(4, neck);
-            stm.setDouble(5, chest);
-            stm.setDouble(6, biceps);
-            stm.setDouble(7, waist);
-            stm.setDouble(8, abdomen);
-            stm.setDouble(9, hips);
-            stm.setDouble(10, thigh);
-            stm.setDouble(11, calf);
+                            "values (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            stm.setInt(1, user.getId());
+            stm.setString(2, body.getDate());
+            stm.setDouble(3, body.getWeight());
+            stm.setDouble(4, body.getHeight());
+            stm.setDouble(5, body.getNeckCircuit());
+            stm.setDouble(6, body.getChestCircuit());
+            stm.setDouble(7, body.getBicepsCircuit());
+            stm.setDouble(8, body.getWaistCircuit());
+            stm.setDouble(9, body.getAbdomenCircuit());
+            stm.setDouble(10, body.getHipsCircuit());
+            stm.setDouble(11, body.getThighCircuit());
+            stm.setDouble(12, body.getCalfCircuit());
             stm.execute();
 
         } catch (SQLException e){
@@ -163,6 +152,9 @@ public class SQLiteDatabase {
         return true;
     }
 
+
+    // niepotrzebne wykasować
+    /*
     public boolean insertNewUserBodyMeasurment(int idUser, int idBody){
         try {
             PreparedStatement stm =
@@ -177,6 +169,7 @@ public class SQLiteDatabase {
         }
         return true;
     }
+    */
 
     public List<User> selectAllUsers(){
         List<User> userList = new LinkedList<User>();
@@ -215,11 +208,12 @@ public class SQLiteDatabase {
             Statement st = connection.createStatement();
             ResultSet result = st.executeQuery("SELECT * FROM body");
             String date;
-            int id, weight, height, neck, chest, biceps, waist,
+            int id, id_user, weight, height, neck, chest, biceps, waist,
                     abdomen, hips, thigh, calf;
 
             while(result.next()){
-                id = result.getInt("id_body");
+                //id = result.getInt("id_body");
+                //id_user = result.getInt("id_user");
                 date = result.getString("date");
                 weight = result.getInt("weight");
                 height = result.getInt("height");
@@ -231,7 +225,40 @@ public class SQLiteDatabase {
                 hips = result.getInt("hips");
                 thigh = result.getInt("thigh");
                 calf = result.getInt("calf");
-                bodyList.add(new Body(id, date, weight, height, neck, chest,
+                bodyList.add(new Body(date, weight, height, neck, chest,
+                        biceps, waist, abdomen, hips, thigh, calf));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return bodyList;
+    }
+
+    public List<Body> selectAllUserBodyEntries(User user){
+        List<Body> bodyList = new LinkedList<Body>();
+
+        try {
+            Statement st = connection.createStatement();
+            ResultSet result = st.executeQuery("SELECT * FROM body WHERE id_user=" + user.getId());
+            String date;
+            int weight, height, neck, chest, biceps, waist,
+                    abdomen, hips, thigh, calf;
+
+            while(result.next()){
+                //id = result.getInt("id_body");
+                //id_user = result.getInt("id_user");
+                date = result.getString("date");
+                weight = result.getInt("weight");
+                height = result.getInt("height");
+                neck = result.getInt("neck");
+                chest = result.getInt("chest");
+                biceps = result.getInt("biceps");
+                waist = result.getInt("waist");
+                abdomen = result.getInt("abdomen");
+                hips = result.getInt("hips");
+                thigh = result.getInt("thigh");
+                calf = result.getInt("calf");
+                bodyList.add(new Body(date, weight, height, neck, chest,
                         biceps, waist, abdomen, hips, thigh, calf));
             }
         } catch (SQLException e) {

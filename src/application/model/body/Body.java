@@ -8,7 +8,6 @@ import java.util.Date;
  * Created by Michał on 17.03.2016.
  */
 public class Body {
-    private int idMeasurment;
     private String date;
     private double weight;
     private double height;
@@ -28,8 +27,7 @@ public class Body {
 
     public Body(){};
 
-    public Body(int idMeasurment,
-                String date,
+    public Body(String date,
                 double weight,
                 double height,
                 double neckCircuit,
@@ -40,7 +38,6 @@ public class Body {
                 double hipsCircuit,
                 double thighCircuit,
                 double calfCircuit) {
-        this.idMeasurment = idMeasurment;
         this.date = date;
         this.weight = weight;
         this.height = height;
@@ -67,7 +64,6 @@ public class Body {
                 double hipsCircuit,
                 double thighCircuit,
                 double calfCircuit) {
-        this.idMeasurment = 0;
         this.date = new Date().toString();
         this.weight = weight;
         this.height = height;
@@ -81,12 +77,40 @@ public class Body {
         this.calfCircuit = calfCircuit;
     }
 
+    @Override
+    public String toString() {
+        return "Body{" +
+                "date='" + date + '\'' +
+                ", weight=" + weight +
+                ", height=" + height +
+                ", neckCircuit=" + neckCircuit +
+                ", chestCircuit=" + chestCircuit +
+                ", bicepsCircuit=" + bicepsCircuit +
+                ", waistCircuit=" + waistCircuit +
+                ", abdomenCircuit=" + abdomenCircuit +
+                ", hipsCircuit=" + hipsCircuit +
+                ", thighCircuit=" + thighCircuit +
+                ", calfCircuit=" + calfCircuit +
+                ", bmi=" + bmi +
+                ", wHR=" + wHR +
+                ", pcs=" + pcs +
+                '}';
+    }
+
     public void addPropertyChangeListener(PropertyChangeListener listener){
         pcs.addPropertyChangeListener(listener);
     }
 
     public void removePropertyChangeListener(PropertyChangeListener listener){
         pcs.removePropertyChangeListener(listener);
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public double getWeight() {

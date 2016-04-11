@@ -16,11 +16,9 @@ public class User {
     private String name;
     private String lastName;
     private String gender;
-    private Date dateOfBirth;
+    private String dateOfBirth;
 
     private int age;
-
-    DateFormat df;
 
     public User(int id,
                 String username,
@@ -34,16 +32,21 @@ public class User {
         this.name = name;
         this.lastName = lastName;
         this.gender = gender;
-        this.df = new SimpleDateFormat("yyyy/mm/dd");
 
+        this.dateOfBirth = birthDate;
+        this.age = getAge(convertStringToDate(birthDate));
+
+    }
+
+    public Date convertStringToDate(String birthDate){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/mm/dd");
         try{
-            this.dateOfBirth = df.parse(birthDate);
-            this.age = getAge(dateOfBirth);
+            Date dateOfBirth = dateFormat.parse(birthDate);
+            return dateOfBirth;
         } catch (ParseException e){
             e.printStackTrace();
-            this.age = 25;
+            return new Date();
         }
-        System.out.println();
     }
 
     private int getAge(Date dateOfBirth){
@@ -109,6 +112,14 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String toString(){
