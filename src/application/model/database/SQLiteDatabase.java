@@ -1,6 +1,8 @@
 package application.model.database;
 
+import application.model.user.ExistingUser;
 import application.model.body.Body;
+import application.model.user.User;
 
 import java.sql.*;
 import java.util.*;
@@ -90,7 +92,7 @@ public class SQLiteDatabase implements Database {
         return true;
     }
 
-    public boolean insertUser(User user){
+    public boolean insertNewUser(ExistingUser user){
         try{
             PreparedStatement stm =
                     connection.prepareStatement("INSERT INTO users " +
@@ -110,22 +112,41 @@ public class SQLiteDatabase implements Database {
         return true;
     }
 
-    public boolean findUserLogons(User user){
+    public User findUser(User searchedUser){
+        int id;
+        ExistingUser existingUser;
+        String username, pass, name, lastname, gender, dateOfBirth;
+
         try{
             PreparedStatement stm =
                     connection.prepareStatement("SELECT id_user FROM users " +
                             "WHERE username=? and pass=?");
-            stm.setString(1, user.getUsername());
-            stm.setString(2, user.getPassword());
-            stm.execute();
+            stm.setString(1, searchedUser.getUsername());
+            stm.setString(2, searchedUser.getPassword());
+
+            ResultSet result = stm.executeQuery();
+            while(result.next()) {
+                id = result.getInt("id_user");
+                username = result.getString("username");
+                pass = result.getString("pass");
+                name = result.getString("name");
+                lastname = result.getString("lastname");
+                gender = result.getString("gender");
+                dateOfBirth = result.getString("dateOfBirth");
+
+                existingUser = new ExistingUser(id, username, pass, name, lastname, gender, dateOfBirth);
+                return existingUser;
+            }
+
+            return null;
+
         }catch (SQLException e){
             e.printStackTrace();
-            return false;
+            return null;
         }
-        return true;
     }
 
-    public boolean insertNewUserBodyData(User user, Body body){
+    public boolean insertNewUserBodyData(ExistingUser user, Body body){
         try {
             PreparedStatement stm =
                     connection.prepareStatement("INSERT INTO body " +
@@ -171,8 +192,8 @@ public class SQLiteDatabase implements Database {
     }
     */
 
-    public List<User> selectAllUsers(){
-        List<User> userList = new LinkedList<User>();
+    public List<ExistingUser> selectAllUsers(){
+        List<ExistingUser> userList = new LinkedList<ExistingUser>();
 
         try {
             Statement st = connection.createStatement();
@@ -188,7 +209,7 @@ public class SQLiteDatabase implements Database {
                 lastname = result.getString("lastname");
                 gender = result.getString("gender");
                 dateOfBirth = result.getString("dateOfBirth");
-                userList.add(new User(id, username, pass, name, lastname, gender, dateOfBirth));
+                userList.add(new ExistingUser(id, username, pass, name, lastname, gender, dateOfBirth));
             }
         } catch (SQLException e) {
             System.err.println("Error retreiving users list");
@@ -234,7 +255,7 @@ public class SQLiteDatabase implements Database {
         return bodyList;
     }
 
-    public List<Body> selectAllUserBodyEntries(User user){
+    public List<Body> selectAllUserBodyEntries(ExistingUser user){
         List<Body> bodyList = new LinkedList<Body>();
 
         try {

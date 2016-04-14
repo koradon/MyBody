@@ -1,5 +1,8 @@
 package application.view.windows.swing.UserLoggin;
 
+import application.model.database.SQLiteDatabase;
+import application.model.user.NotLoggedUser;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,38 +18,30 @@ public class UserLoggingWindow extends JFrame {
     private int DEFAULT_WIDTH = screenSize.width;
     private int DEFAULT_HEIGHT = screenSize.height;
 
+    JPanel centerPanel, northPanel, southPanel;
+    final JTextField usernameTextField;
+    final JPasswordField passwordField;
+    final JButton logInButton;
+
+    private NotLoggedUser notLoggedUser;
+
     @Override
     public void setSize(int width, int height) {
         super.setSize(DEFAULT_WIDTH/2, DEFAULT_HEIGHT/2);
     }
 
     public UserLoggingWindow(){
-        JPanel centerPanel = new JPanel();
-        JPanel northPanel = new JPanel();
-        JPanel southPanel = new JPanel();
+        this.centerPanel = new JPanel();
+        this.northPanel = new JPanel();
+        this.southPanel = new JPanel();
+        this.usernameTextField = new JTextField();
+        this.passwordField = new JPasswordField();
+        this.logInButton = new JButton("Log me in!");
+        this.notLoggedUser = new NotLoggedUser();
 
-        northPanel.add(new JLabel(new ImageIcon("images/mainBody.jpg")));
-
-        final JTextField username = new JTextField();
-        final JPasswordField password = new JPasswordField();
-
-        centerPanel.setLayout(new GridLayout(2,2));
-        centerPanel.add(new JLabel("Username: ", SwingConstants.RIGHT));
-        centerPanel.add(username);
-        centerPanel.add(new JLabel("Password: ", SwingConstants.RIGHT));
-        centerPanel.add(password);
-
-        JButton logInButton = new JButton("Log me in!");
-        southPanel.add(logInButton);
-        logInButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(logIn(username.getText())){
-                    dispose();
-                };
-
-            }
-        });
+        createNorthPanel();
+        createCenterPanel();
+        createSouthPanel();
 
         add(centerPanel, BorderLayout.CENTER);
         add(northPanel, BorderLayout.NORTH);
@@ -55,9 +50,64 @@ public class UserLoggingWindow extends JFrame {
         pack();
     }
 
-    public boolean logIn(String username){
-        System.out.println("Logged In as: " + username);
-        return true;
+
+
+    private void createNorthPanel(){
+        northPanel.add(new JLabel(new ImageIcon("images/mainBody.jpg")));
     }
 
+    private void createCenterPanel(){
+        centerPanel.setLayout(new GridLayout(2,2));
+
+        addUsernameTextFieldToPanel(centerPanel);
+        addPasswordFieldToPanel(centerPanel);
+    }
+
+    private void addUsernameTextFieldToPanel(JPanel panel){
+        panel.add(new JLabel("Username: ", SwingConstants.RIGHT));
+        panel.add(usernameTextField);
+    }
+
+    private void addPasswordFieldToPanel(JPanel panel){
+        panel.add(new JLabel("Password: ", SwingConstants.RIGHT));
+        panel.add(passwordField);
+    }
+
+    private void createSouthPanel(){
+        addLogInButtonToPanel(southPanel);
+    }
+
+    private void addLogInButtonToPanel(JPanel panel){
+        panel.add(logInButton);
+        setActionWhenLogInButtonPressed();
+    }
+
+    private void setActionWhenLogInButtonPressed(){
+        logInButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                readUsernameAndPasswordFields();
+
+                if(logIn()){
+                    dispose();
+                } else {
+                    System.out.println("Invalid password. Try again");
+                }
+            }
+        });
+    }
+
+    private void readUsernameAndPasswordFields(){
+        notLoggedUser.setUsername(usernameTextField.getText());
+        notLoggedUser.setPassword(passwordField.getText());
+    }
+
+    public boolean logIn(){
+        SQLiteDatabase database = new SQLiteDatabase();
+
+        database.findUserId(notLoggedUser);
+
+        System.out.println("Logged In as: " + notLoggedUser.getUsername());
+        return true;
+    }
 }

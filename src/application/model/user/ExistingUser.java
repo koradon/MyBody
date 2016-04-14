@@ -1,4 +1,4 @@
-package application.model.database;
+package application.model.user;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * Created by Dorotka on 2016-03-21.
  */
-public class User {
+public class ExistingUser implements User{
     private int id;
     private String username;
     private String password;
@@ -20,13 +20,13 @@ public class User {
 
     private int age;
 
-    public User(int id,
-                String username,
-                String password,
-                String name,
-                String lastName,
-                String gender,
-                String birthDate) {
+    public ExistingUser(int id,
+                        String username,
+                        String password,
+                        String name,
+                        String lastName,
+                        String gender,
+                        String birthDate) {
         this.username = username;
         this.password = password;
         this.name = name;

@@ -1,6 +1,8 @@
 package application.model.database;
 
+import application.model.user.ExistingUser;
 import application.model.body.Body;
+import application.model.user.User;
 
 import java.util.List;
 
@@ -8,10 +10,10 @@ import java.util.List;
  * Created by Dorotka on 2016-04-11.
  */
 public interface Database {
-    public void createNewDatabase(String fileName);
-    public boolean createTable();
-    public boolean insertUser(User user);
-    public boolean findUserLogons(User user);
-    public boolean insertNewUserBodyData(User user, Body body);
-    public List<Body> selectAllUserBodyEntries(User user);
+    void createNewDatabase(String fileName);
+    boolean createTable();
+    boolean insertNewUser(ExistingUser user);
+    User findUser(User user);
+    boolean insertNewUserBodyData(ExistingUser user, Body body);
+    List<Body> selectAllUserBodyEntries(ExistingUser user);
 }
