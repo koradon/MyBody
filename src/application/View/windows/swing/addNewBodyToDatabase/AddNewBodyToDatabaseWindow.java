@@ -65,31 +65,26 @@ public class AddNewBodyToDatabaseWindow extends JFrame {
         centerPanel.add(new JLabel("Calf Circuit: ", SwingConstants.RIGHT));
         centerPanel.add(calfTF);
 
-
-
         northPanel.add(new JLabel("Please fill your dimensions", SwingConstants.CENTER));
 
-
         eastPanel.setVisible(false);
-
-
-
 
         JButton saveButton = new JButton("Save");
         southPanel.add(saveButton);
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(AddNewBodyToDatabaseController.addNewBodyToDatabase(new Body(Double.parseDouble(weightTF.getText()),
-                                              Double.parseDouble(heightTF.getText()),
-                                              Double.parseDouble(neckTF.getText()),
-                                              Double.parseDouble(chestTF.getText()),
-                                              Double.parseDouble(bicepsTF.getText()),
-                                              Double.parseDouble(waistTF.getText()),
-                                              Double.parseDouble(abdomenTF.getText()),
-                                              Double.parseDouble(hipsTF.getText()),
-                                              Double.parseDouble(thighTF.getText()),
-                                              Double.parseDouble(calfTF.getText())))){
+                if(AddNewBodyToDatabaseController.addNewBodyToDatabase(new Body(
+                                                Double.parseDouble(weightTF.getText()),
+                                                Double.parseDouble(heightTF.getText()),
+                                                Double.parseDouble(neckTF.getText()),
+                                                Double.parseDouble(chestTF.getText()),
+                                                Double.parseDouble(bicepsTF.getText()),
+                                                Double.parseDouble(waistTF.getText()),
+                                                Double.parseDouble(abdomenTF.getText()),
+                                                Double.parseDouble(hipsTF.getText()),
+                                                Double.parseDouble(thighTF.getText()),
+                                                Double.parseDouble(calfTF.getText())))){
                     System.out.println("Saved");
                 }
 

@@ -3,21 +3,23 @@ package application.model.body;
 import application.model.body.Body;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by Michał on 17.03.2016.
  */
 public class BodyHistory {
-    private ArrayList<Body> bodyHistory = new ArrayList<>();
+    private List<Body> bodyHistory = new LinkedList<>();
 
-    public BodyHistory(ArrayList<Body> bodyHistory) {
+    public BodyHistory(List<Body> bodyHistory) {
         this.bodyHistory = bodyHistory;
     }
 
     public BodyHistory() {
     }
 
-    public ArrayList<Body> getBodyHistory() {
+    public List<Body> getBodyHistory() {
         return bodyHistory;
     }
 
