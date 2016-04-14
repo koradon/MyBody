@@ -1,4 +1,4 @@
-package application.controler;
+package application.view.windows.swing.addNewBodyToDatabase;
 
 import application.model.body.Body;
 import application.model.body.BodyHistory;

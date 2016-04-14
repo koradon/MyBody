@@ -1,11 +1,10 @@
-package application.view.windows.swing;
+package application.view.windows.swing.addNewBodyToDatabase;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import application.controler.AddNewBodyToDatabaseController;
 import application.model.body.Body;
 import application.view.charts.LineChart;
 import org.jfree.ui.RefineryUtilities;
