@@ -55,7 +55,7 @@ public class SQLiteDatabase implements Database {
         String createUsers = "CREATE TABLE IF NOT EXISTS users " +
                 "(id_user INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "username varchar(255), " +
-                "pass varchar(255)," +
+                "pass varchar(255), " +
                 "name varchar(255), " +
                 "lastname varchar(255), " +
                 "gender varchar(255)," +
@@ -112,14 +112,16 @@ public class SQLiteDatabase implements Database {
         return true;
     }
 
-    public User findUser(User searchedUser){
+    public ExistingUser findUser(User searchedUser){
         int id;
         ExistingUser existingUser;
         String username, pass, name, lastname, gender, dateOfBirth;
 
         try{
             PreparedStatement stm =
-                    connection.prepareStatement("SELECT id_user FROM users " +
+                    connection.prepareStatement("SELECT " +
+                            "id_user, username, pass, name, lastname, gender, dateOfBirth " +
+                            "FROM users " +
                             "WHERE username=? and pass=?");
             stm.setString(1, searchedUser.getUsername());
             stm.setString(2, searchedUser.getPassword());

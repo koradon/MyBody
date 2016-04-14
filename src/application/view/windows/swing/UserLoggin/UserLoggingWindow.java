@@ -1,6 +1,8 @@
 package application.view.windows.swing.UserLoggin;
 
+import application.model.database.Database;
 import application.model.database.SQLiteDatabase;
+import application.model.user.ExistingUser;
 import application.model.user.NotLoggedUser;
 
 import javax.swing.*;
@@ -24,6 +26,9 @@ public class UserLoggingWindow extends JFrame {
     final JButton logInButton;
 
     private NotLoggedUser notLoggedUser;
+    private ExistingUser existingUser;
+
+    private Database database;
 
     @Override
     public void setSize(int width, int height) {
@@ -103,9 +108,9 @@ public class UserLoggingWindow extends JFrame {
     }
 
     public boolean logIn(){
-        SQLiteDatabase database = new SQLiteDatabase();
+        database = new SQLiteDatabase();
 
-        database.findUserId(notLoggedUser);
+        existingUser = database.findUser(notLoggedUser);
 
         System.out.println("Logged In as: " + notLoggedUser.getUsername());
         return true;

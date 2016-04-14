@@ -13,7 +13,7 @@ public interface Database {
     void createNewDatabase(String fileName);
     boolean createTable();
     boolean insertNewUser(ExistingUser user);
-    User findUser(User user);
+    ExistingUser findUser(User user);
     boolean insertNewUserBodyData(ExistingUser user, Body body);
     List<Body> selectAllUserBodyEntries(ExistingUser user);
 }
